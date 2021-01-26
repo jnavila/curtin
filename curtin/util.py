@@ -990,7 +990,7 @@ def human2bytes(size):
         if int(size) != size:
             raise ValueError("'%s': resulted in non-integer (%s)" %
                              (size_in, int(size)))
-        return size
+        return int(size)
     elif not isinstance(size, str):
         raise TypeError("cannot convert type %s ('%s')." % (type(size), size))
 
@@ -1018,7 +1018,7 @@ def human2bytes(size):
     if int(val) != val:
         raise ValueError("'%s': resulted in non-integer (%s)" % (size_in, val))
 
-    return val
+    return int(val)
 
 
 def bytes2human(size):
